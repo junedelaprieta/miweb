@@ -1,0 +1,306 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+body{
+  background:#0b0f14;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  padding:20px 40px;
+  display:flex;
+  justify-content:space-between;
+  background:rgba(0,0,0,0.5);
+  backdrop-filter:blur(12px);
+  z-index:1000;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:25px;
+  transition:.3s;
+}
+
+nav a:hover{
+  color:#00ffc3;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background: radial-gradient(circle at center,#0f2027,#000);
+}
+
+.hero h1{
+  font-size:80px;
+  font-weight:900;
+  background:linear-gradient(90deg,#00ffc3,#00aaff);
+  background-clip:text;              /* estándar */
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+  margin-top:20px;
+  opacity:.7;
+}
+
+/* SECTIONS */
+section{
+  padding:120px 40px;
+}
+
+h2{
+  text-align:center;
+  margin-bottom:60px;
+  font-size:42px;
+}
+
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:#111;
+  border-radius:20px;
+  overflow:hidden;
+  position:relative;
+  transition:.4s;
+}
+
+.card img{
+  width:100%;
+}
+
+.card h3{
+  padding:15px;
+}
+
+.card:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 0 25px #00ffc355;
+}
+
+/* PARALLAX */
+.parallax{
+  height:300px;
+  background:url('https://images.unsplash.com/photo-1511512578047-dfb367046420') center/cover fixed;
+}
+
+/* COMMUNITY */
+.comunidad{
+  text-align:center;
+  max-width:600px;
+  margin:auto;
+}
+
+/* FOOTER */
+footer{
+  padding:40px;
+  text-align:center;
+  background:#000;
+  opacity:.6;
+}
+
+/* ANIMACIONES */
+.hidden{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .6s ease;
+}
+
+.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+/* BOTON */
+.btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:12px 25px;
+  border-radius:30px;
+  background:linear-gradient(90deg,#00ffc3,#00aaff);
+  color:black;
+  font-weight:700;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:scale(1.1);
+}
+
+/* GRID */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+}
+
+/* CARD */
+.card{
+  position:relative;
+  border-radius:20px;
+  overflow:hidden;
+  background:#111;
+  transition:.4s;
+}
+
+.card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,#00ffc3,#6c5cff);
+  opacity:0;
+  transition:.4s;
+}
+
+.card:hover::after{
+  opacity:.2;
+}
+
+.card:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 0 40px #6c5cff88;
+}
+
+/* IMG */
+.bg{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  filter:brightness(0.5);
+}
+
+/* BADGE */
+.badge{
+  position:absolute;
+  top:15px;
+  left:15px;
+  background:white;
+  color:black;
+  padding:5px 12px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:bold;
+}
+
+/* AVATAR */
+.avatar{
+  position:absolute;
+  top:130px;
+  left:50%;
+  transform:translateX(-50%);
+  width:75px;
+  height:75px;
+  border-radius:50%;
+  overflow:hidden;
+  border:3px solid #00ffc3;
+  box-shadow:0 0 20px #00ffc3;
+}
+
+/* INFO */
+.info{
+  padding:70px 20px 20px;
+}
+
+.actions{
+  display:flex;
+  gap:10px;
+}
+
+/* BOTONES */
+.btn-dark{
+  background:#222;
+  color:white;
+  border:none;
+  padding:8px 15px;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+.btn-light{
+  background:white;
+  color:black;
+  border:none;
+  padding:8px 15px;
+  border-radius:20px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+/* FILTROS */
+.filters{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  margin-bottom:30px;
+}
+
+.pill{
+  padding:8px 15px;
+  border-radius:20px;
+  border:1px solid #444;
+  background:transparent;
+  color:white;
+  cursor:pointer;
+}
+
+.pill.active{
+  border-color:#00ffc3;
+  background:#00ffc322;
+}
+
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
+}
+
+.modal-content{
+  width:80%;
+  height:70%;
+  position:relative;
+}
+
+.modal iframe{
+  width:100%;
+  height:100%;
+  border-radius:10px;
+}
+
+.close{
+  position:absolute;
+  top:-30px;
+  right:0;
+  color:white;
+  font-size:25px;
+  cursor:pointer;
+}

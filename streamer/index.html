@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arcane G4NG</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<nav>
+  <strong>ARCANE G4NG</strong>
+  <div>
+    <a href="#inicio">Inicio</a>
+    <a href="#streamers">Streamers</a>
+    <a href="#comunidad">Comunidad</a>
+  </div>
+</nav>
+
+<section class="hero" id="inicio">
+  <div>
+    <h1>JOIN THE G4NG</h1>
+    <p>Streamers · Comunidad · Caos</p>
+    <a href="#streamers" class="btn">Explorar</a>
+  </div>
+</section>
+
+
+<section id="streamers">
+  <h2>Directos y chats.</h2>
+
+  <!-- FILTROS -->
+  <div class="filters">
+    <span>FILTRAR</span>
+    <button class="pill active" data-user="all">Todos</button>
+    <button class="pill" data-user="franbeuve">franbeuve</button>
+    <button class="pill" data-user="elcalvolol">elcalvolol</button>
+    <button class="pill" data-user="lopezfnx">lopezfnx</button>
+  </div>
+
+  <div class="cards">
+
+    <!-- CARD -->
+    <div class="card hidden" data-user="franbeuve">
+      <img src="https://via.placeholder.com/500x300" class="bg">
+
+      <span class="badge">OFFLINE</span>
+
+      <div class="avatar">
+        <img src="https://via.placeholder.com/80">
+      </div>
+
+      <div class="info">
+        <h3>franbeuve</h3>
+
+        <div class="actions">
+          <button class="btn-dark" onclick="showChat('franbeuve')">Mostrar chat</button>
+          <button class="btn-light" onclick="openStream('franbeuve')">Ver canal</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- DUPLICA CARDS CAMBIANDO data-user -->
+    
+  </div>
+</section>
+
+<!-- MODAL STREAM -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">✕</span>
+    <iframe id="twitchFrame" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<div class="parallax"></div>
+
+<section id="comunidad">
+  <h2>Comunidad</h2>
+  <div class="comunidad hidden">
+    <p>Únete a una comunidad donde el contenido y el caos van de la mano.</p>
+    <a href="#" class="btn">Unirse</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Arcane G4NG</p>
+</footer>
+
+<script src="js/scripts.js"></script>
+</body>
+</html>
