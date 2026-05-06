@@ -24,7 +24,7 @@ function openStream(user){
   const modal = document.getElementById('modal');
   const frame = document.getElementById('twitchFrame');
 
-  frame.src = `https://player.twitch.tv/?channel=${user}&parent=localhost`;
+  frame.src = `https://player.twitch.tv/?channel=${user}&parent=junedelaprieta.github.io`;
   modal.style.display = "flex";
 }
 
@@ -32,7 +32,7 @@ function showChat(user){
   const modal = document.getElementById('modal');
   const frame = document.getElementById('twitchFrame');
 
-  frame.src = `https://www.twitch.tv/embed/${user}/chat?parent=localhost`;
+  frame.src = `https://www.twitch.tv/embed/${user}/chat?parent=junedelaprieta.github.io`;
   modal.style.display = "flex";
 }
 
