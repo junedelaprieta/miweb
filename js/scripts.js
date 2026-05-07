@@ -24,7 +24,8 @@ function openStream(user){
   const modal = document.getElementById('modal');
   const frame = document.getElementById('twitchFrame');
 
-  frame.src = `https://player.twitch.tv/?channel=${franbeuve}&parent=junedelaprieta.github.io`;
+  frame.src = `https://player.twitch.tv/?channel=${user}&parent=localhost&parent=127.0.0.1&parent=junedelaprieta.github.io`;
+
   modal.style.display = "flex";
 }
 
