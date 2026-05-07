@@ -10,8 +10,12 @@ pills.forEach(btn=>{
     const user = btn.dataset.user;
 
     cards.forEach(card=>{
-  card.style.display = "block";
-});
+      if(user === "all" || card.dataset.user === user){
+        card.style.display="block";
+      }else{
+        card.style.display="none";
+      }
+    });
   });
 });
 
@@ -20,8 +24,9 @@ function openStream(user){
   const modal = document.getElementById('modal');
   const frame = document.getElementById('twitchFrame');
 
-  frame.src = `https://player.twitch.tv/?channel=${user}&parent=localhost&parent=127.0.0.1&parent=junedelaprieta.github.io`;
-
+  const parent = location.hostname + (location.port ? ':' + location.port : '');
+  frame.src = `https://player.twitch.tv/?channel=${user}&parent=${parent}`;
+  frame.allow = "autoplay; fullscreen; encrypted-media; picture-in-picture";
   modal.style.display = "flex";
 }
 
@@ -29,8 +34,9 @@ function showChat(user){
   const modal = document.getElementById('modal');
   const frame = document.getElementById('twitchFrame');
 
-  frame.src = `https://player.twitch.tv/?channel=${user}&parent=localhost&parent=127.0.0.1&parent=junedelaprieta.github.io`;
-
+  const parent = location.hostname + (location.port ? ':' + location.port : '');
+  frame.src = `https://www.twitch.tv/embed/${user}/chat?parent=${parent}`;
+  frame.allow = "autoplay; fullscreen; encrypted-media; picture-in-picture";
   modal.style.display = "flex";
 }
 
