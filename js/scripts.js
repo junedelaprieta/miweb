@@ -25,7 +25,10 @@ function openStream(user){
   const frame = document.getElementById('twitchFrame');
 
   const parent = location.hostname + (location.port ? ':' + location.port : '');
-  frame.src = `https://player.twitch.tv/?channel=${user}&parent=${parent}`;
+  const src = `https://player.twitch.tv/?channel=${user}&parent=${parent}`;
+  console.log('Twitch parent:', parent);
+  console.log('Setting twitchFrame.src ->', src);
+  frame.src = src;
   frame.allow = "autoplay; fullscreen; encrypted-media; picture-in-picture";
   modal.style.display = "flex";
 }
@@ -35,7 +38,10 @@ function showChat(user){
   const frame = document.getElementById('twitchFrame');
 
   const parent = location.hostname + (location.port ? ':' + location.port : '');
-  frame.src = `https://www.twitch.tv/embed/${user}/chat?parent=${parent}`;
+  const src = `https://www.twitch.tv/embed/${user}/chat?parent=${parent}`;
+  console.log('Twitch parent:', parent);
+  console.log('Setting twitchFrame.src ->', src);
+  frame.src = src;
   frame.allow = "autoplay; fullscreen; encrypted-media; picture-in-picture";
   modal.style.display = "flex";
 }
