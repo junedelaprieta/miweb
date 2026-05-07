@@ -10,12 +10,8 @@ pills.forEach(btn=>{
     const user = btn.dataset.user;
 
     cards.forEach(card=>{
-      if(user === "all" || card.dataset.user === user){
-        card.style.display="block";
-      }else{
-        card.style.display="none";
-      }
-    });
+  card.style.display = "block";
+});
   });
 });
 
@@ -33,7 +29,8 @@ function showChat(user){
   const modal = document.getElementById('modal');
   const frame = document.getElementById('twitchFrame');
 
-  frame.src = `https://www.twitch.tv/embed/${user}/chat?parent=junedelaprieta.github.io`;
+  frame.src = `https://player.twitch.tv/?channel=${user}&parent=localhost&parent=127.0.0.1&parent=junedelaprieta.github.io`;
+
   modal.style.display = "flex";
 }
 
